@@ -1,39 +1,47 @@
 import 'package:flutter/material.dart';
-import 'package:exercice/Tp/exercice.dart';
-import 'dart:math';
+//import 'package:exercice/Tp/exercice.dart';
+//import 'dart:math';
+
+import 'Tp/personne.dart';
+import 'package:exercice/Tp/calculatrice.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MaterialApp(home: personne(),));
+
+
+
+
+
+
   //Question2
 
-  int nombreDeFois = 3;
-  afficherBonjourLeMonde(nombreDeFois);
+//   int nombreDeFois = 3;
+// //   afficherBonjourLeMonde(nombreDeFois);
 
-  //Question5
+// //   //Question5
 
-  int nombre = 5;
-  int resultat = calculerFactorielle(nombre);
-  print('La factorielle de $nombre est : $resultat');
+//   int nombre = 5;
+// //   int resultat = calculerFactorielle(nombre);
+// //   print('La factorielle de $nombre est : $resultat');
+//   List<int> listeNombres = [10, 15, 20, 25, 30];
+// //   double moyenne = calculerMoyenne(listeNombres);
+// //   print('La moyenne des nombres est : $moyenne');
 
-  List<int> listeNombres = [10, 15, 20, 25, 30];
-  double moyenne = calculerMoyenne(listeNombres);
-  print('La moyenne des nombres est : $moyenne');
+//   testAge();
 
-  testAge();
-
-// Question6
-  Etudiant etudiant1 = Etudiant(
-    1,
-    'Dodo',
-    'Docile',
-    'Wakomya',
-    'F',
-    20,
-    DateTime(2004, 5, 15),
-    70.5,
-    175.0,
-  );
-  etudiant1.afficherEtudiant();
+// // Question6
+  // Etudiant etudiant1 = Etudiant(
+  //   1,
+  //   'Dodo',
+  //   'Docile',
+  //   'Wakomya',
+  //   'F',
+  //   20,
+  //   DateTime(2004, 5, 15),
+  //   70.5,
+  //   175.0,
+  // );
+  // etudiant1.afficherEtudiant();
 
 //void testAge(ID, Nom, Post);
 }
