@@ -23,14 +23,14 @@ class _personneState extends State<personne> {
               enabled: true,
               decoration: InputDecoration(
                 hintText: 'Entrez votre nom',
-                labelText: 'votre nom',
+                labelText: 'Votre nom',
               )),
           new TextField(
               controller: null,
               enabled: true,
               decoration: InputDecoration(
                 hintText: 'Entrez votre Post nom',
-                labelText: 'votre Post nom',
+                labelText: 'Votre Post nom',
               )),
           IconButton(
             onPressed: () {},

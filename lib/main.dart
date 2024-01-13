@@ -6,7 +6,7 @@ import 'Tp/personne.dart';
 import 'package:exercice/Tp/calculatrice.dart';
 
 void main() {
-  runApp(MaterialApp(home: personne(),));
+  //runApp(MaterialApp(home: calculatrice(),));
 
 
 
