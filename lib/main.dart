@@ -1,12 +1,13 @@
+import 'package:exercice/Tp/calcul.dart';
 import 'package:flutter/material.dart';
 //import 'package:exercice/Tp/exercice.dart';
 //import 'dart:math';
 
-import 'Tp/personne.dart';
-import 'package:exercice/Tp/calculatrice.dart';
+// import 'Tp/personne.dart';
+// import 'package:exercice/Tp/calculatrice.dart';
 
 void main() {
-  //runApp(MaterialApp(home: calculatrice(),));
+  runApp(MaterialApp(home: calcul(),));
 
 
 

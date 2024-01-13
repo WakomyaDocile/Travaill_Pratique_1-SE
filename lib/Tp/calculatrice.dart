@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-class calculatrice extends StatefulWidget {
-  //const calculatrice({ Key? key }) : super(key: key);
+// ignore: must_be_immutable
+class Calculatrice extends StatefulWidget {
+  //const Calculatrice({ Key? key }) : super(key: key);
 
   TextEditingController txtNombre1= new TextEditingController();
   TextEditingController txtNombre2= new TextEditingController();
@@ -18,10 +19,10 @@ class calculatrice extends StatefulWidget {
   }
 
   @override
-  State<calculatrice> createState() => _calculatriceState();
+  State<Calculatrice> createState() => _CalculatriceState();
 }
 
-class _calculatriceState extends State<calculatrice> {
+class _CalculatriceState extends State<Calculatrice> {
   @override
   Widget build(BuildContext context) {
     var txtNombre1;
