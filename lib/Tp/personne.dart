@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-class personne extends StatefulWidget {
-  const personne({Key? key}) : super(key: key);
+class Personne extends StatefulWidget {
+  const Personne({Key? key}) : super(key: key);
 
   @override
-  State<personne> createState() => _personneState();
+  State<Personne> createState() => _PersonneState();
 }
 
-class _personneState extends State<personne> {
+class _PersonneState extends State<Personne> {
   @override
   Widget build(BuildContext context) {
-    var add;
+    // var add;
     return Scaffold(
       appBar: AppBar(
         title: Text('IDENTIFICATION'),
@@ -41,9 +41,15 @@ class _personneState extends State<personne> {
             width: 30,
             height: 10,
           ),
-          RaisedButton(
-            onPressed: () {},
-            child: Text("Enregistrer"),
+          // FlatButton(
+          //   onPressed: () {},
+          //   child: Text("Enregistrer"),
+          // )
+          InkWell(
+            onTap: (){},
+            child: Material(
+              child: Container(child: Text('Enregistrer'),),
+            ),
           )
         ],
       ),

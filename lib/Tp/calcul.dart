@@ -1,15 +1,38 @@
 import 'package:flutter/material.dart';
 
-const List<String> list = <String>['One', 'Two', 'Three', 'Four'];
-
 class calcul extends StatefulWidget {
   const calcul({Key? key}) : super(key: key);
 
   @override
   State<calcul> createState() => _calculState();
+
 }
 
 class _calculState extends State<calcul> {
+
+  String signe = "+";
+  TextEditingController txtNombre1= new TextEditingController();
+  TextEditingController txtNombre2= new TextEditingController();
+  TextEditingController txtReponse= new TextEditingController();
+
+  void calcul(){
+    double x = double.parse(txtNombre1.text);
+    double y = double.parse(txtNombre2.text);
+    double rep ;
+
+    if(signe == "-"){
+      rep = x-y;
+    }else if(signe == "*"){
+      rep = x*y;
+    }else if(signe == "/"){
+      rep = x/y;
+    }else{
+      rep = x+y;
+    }
+
+    txtReponse.text = rep.toString();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,20 +43,61 @@ class _calculState extends State<calcul> {
       body: Column(
         children: [
           new TextField(
-            controller: null,
+            controller: txtNombre1,
             decoration: InputDecoration(
               hintText: 'Entrez le premier nombre',
               labelText: 'Le premier nombre',
             ),
           ),
           TextField(
-            controller: null,
+            controller: txtNombre2,
             decoration: InputDecoration(
               hintText: 'Entrez le deuxieme nombre',
               labelText: 'Le deuxieme nombre',
             ),
           ),
-          DropdownButtonExample(),
+
+          DropdownButton(
+            items: const [
+              DropdownMenuItem(
+                value: "-",
+                child: Text("-"),
+              ),
+              DropdownMenuItem(
+                value: "+",
+                child: Text("+"),
+              ),
+              DropdownMenuItem(
+                value: "/",
+                child: Text("/"),
+              ),
+              DropdownMenuItem(
+                value: "*",
+                child: Text("*"),
+              )
+            ], 
+            onChanged: (String? newValue) {
+              setState(() {
+                signe = newValue!;
+              });
+            },
+          ),
+          
+          InkWell(
+            onTap: (){
+              calcul();
+            },
+            child: Material(
+              child: Container(child: Text('Calculer'),),
+            ),
+          ),
+          TextField(
+            controller: txtReponse,
+            decoration: InputDecoration(
+              hintText: 'Ici la reponse',
+              labelText: 'Ici la reponse',
+            ),
+          ),
 
           // List<String> _options =['\u002B Option', 'Option \u00D7', 'Option \u2215', 'Option \u2212'];
           //  String  _selectedOption = '\u002B Option';
@@ -52,43 +116,6 @@ class _calculState extends State<calcul> {
           //  IconButton(onPressed: 3, icon: icon)
         ],
       ),
-    );
-  }
-}
-
-class DropdownButtonExample extends StatefulWidget {
-  const DropdownButtonExample();
-
-  @override
-  State<DropdownButtonExample> createState() => _DropdownButtonExampleState();
-}
-
-class _DropdownButtonExampleState extends State<DropdownButtonExample> {
-  String dropdownValue = list.first;
-
-  @override
-  Widget build(BuildContext context) {
-    return DropdownButton<String>(
-      value: dropdownValue,
-      icon: const Icon(Icons.arrow_downward),
-      elevation: 16,
-      style: const TextStyle(color: Colors.deepPurple),
-      underline: Container(
-        height: 2,
-        color: Colors.deepPurpleAccent,
-      ),
-      onChanged: (String? value) {
-        // This is called when the user selects an item.
-        setState(() {
-          dropdownValue = value!;
-        });
-      },
-      items: list.map<DropdownMenuItem<String>>((String value) {
-        return DropdownMenuItem<String>(
-          value: value,
-          child: Text(value),
-        );
-      }).toList(),
     );
   }
 }
